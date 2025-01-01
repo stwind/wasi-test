@@ -1,15 +1,13 @@
 # wasi-test
 
-To install dependencies:
+build wasm
 
 ```bash
-bun install
+bun run build
 ```
 
-To run:
+run test
 
 ```bash
-bun run index.ts
+bun test
 ```
-
-This project was created using `bun init` in bun v1.1.36. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.

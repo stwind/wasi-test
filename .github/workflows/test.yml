@@ -1,0 +1,26 @@
+name: Test
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [21]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Build wasm
+        uses: stwind/wasi-sdk-action@main
+        with:
+          args: -O3 -flto -nostdlib -nostartfiles -Wl,--import-memory -Wl,--no-entry -Wl,--export-memory,--initial-memory=655360 main.c -o main.wasm
+
+      - name: Run test
+        run: bun test
+        shell: bash
