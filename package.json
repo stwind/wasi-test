@@ -3,7 +3,7 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "build": "docker run -ti --rm --platform linux/x86_64 -v .:/workspace -w /workspace wasi-sdk:25.0 -O3 -flto -nostdlib -nostartfiles -Wl,--import-memory -Wl,--no-entry -Wl,--export-memory,--initial-memory=655360 main.c -o main.wasm"
+    "build": "docker run -ti --rm --platform linux/x86_64 -v .:/workspace -w /workspace wasi-sdk:25.0 -O3 -flto -nostartfiles -Wl,--import-memory -Wl,--no-entry -Wl,--export-memory,--initial-memory=655360 main.c -o main.wasm"
   },
   "devDependencies": {
     "@types/bun": "^1.1.14",
