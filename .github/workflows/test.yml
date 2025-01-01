@@ -19,7 +19,7 @@ jobs:
       - name: Build wasm
         uses: stwind/wasi-sdk-action@main
         with:
-          args: -O3 -flto -nostdlib -nostartfiles -Wl,--import-memory -Wl,--no-entry -Wl,--export-memory,--initial-memory=655360 main.c -o main.wasm
+          args: -O3 -flto -nostartfiles -Wl,--import-memory -Wl,--no-entry -Wl,--export-memory,--initial-memory=655360 main.c -o main.wasm
 
       - name: Run test
         run: bun test
