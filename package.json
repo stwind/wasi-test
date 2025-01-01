@@ -1,0 +1,12 @@
+{
+  "name": "wasi-test",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "^1.1.14",
+    "@types/node": "^22.10.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
